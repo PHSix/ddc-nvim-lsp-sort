@@ -11,13 +11,16 @@ export class Filter extends BaseFilter<Params> {
     if (args.candidates.length > 0 && args.candidates[0].kind) {
       let candidates = args.candidates;
       const texts: Candidate[] = [];
+      const snippets: Candidate[] = [];
       candidates = candidates.filter((item) => {
         if (item.kind === "Text") {
           texts.push(item);
-          return false;
+        } else if (item.kind === "Snippet") {
+          snippets.push(item);
         } else return true;
+        return false;
       });
-      return Promise.resolve(candidates.concat(texts));
+      return Promise.resolve(snippets.concat([...candidates, ...texts]));
     } else {
       return Promise.resolve(args.candidates);
     }
