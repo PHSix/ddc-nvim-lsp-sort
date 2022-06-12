@@ -1,8 +1,8 @@
-import { Candidate } from "https://lib.deno.dev/x/ddc_vim@v1/types.ts";
+import { Candidate } from "https://deno.land/x/ddc_vim@v1.4.0/types.ts";
 import {
   BaseFilter,
   FilterArguments,
-} from "https://lib.deno.dev/x/ddc_vim@v1/base/filter.ts";
+} from "https://deno.land/x/ddc_vim@v1.4.0/base/filter.ts";
 
 type Params = Record<string, string>;
 
